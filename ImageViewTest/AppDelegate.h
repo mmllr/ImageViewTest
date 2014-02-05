@@ -11,5 +11,8 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSImageView *imageView;
+@property (strong) NSImage *image;
+@property (strong) NSArray *images;
 
 @end

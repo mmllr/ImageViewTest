@@ -10,9 +10,32 @@
 
 @implementation AppDelegate
 
++ (NSSet*)keyPathsForValuesAffectingImage
+{
+	return [NSSet setWithObjects:@"contentImageName", @"showPlaceholder", nil];
+}
+
+- (NSArray*)createImages
+{
+	return @[ @{@"name": @"Computer",
+				@"image": [NSImage imageNamed:NSImageNameComputer]
+				},
+			  @{@"name": @"iCloud",
+				@"image": [NSImage imageNamed:NSImageNameDotMac]
+				},
+			 ];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Insert code here to initialize your application
+	self.images = [self createImages];
+
+	NSDictionary *options = @{NSNullPlaceholderBindingOption: [NSImage imageNamed:NSImageNameCaution]
+							  };
+	[self.imageView bind:NSValueBinding
+				toObject:self
+			 withKeyPath:@"image"
+				 options:options];
 }
 
 @end
