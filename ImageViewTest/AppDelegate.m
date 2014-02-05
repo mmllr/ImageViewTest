@@ -10,11 +10,6 @@
 
 @implementation AppDelegate
 
-+ (NSSet*)keyPathsForValuesAffectingImage
-{
-	return [NSSet setWithObjects:@"contentImageName", @"showPlaceholder", nil];
-}
-
 - (NSArray*)createImages
 {
 	return @[ @{@"name": @"Computer",
