@@ -27,9 +27,8 @@
 {
 	self.images = [self createImages];
 
-	NSDictionary *options = @{
-							  NSNullPlaceholderBindingOption: [NSImage imageNamed:NSImageNameCaution]
-							  };
+	NSDictionary *options = @{NSNullPlaceholderBindingOption: [NSImage imageNamed:NSImageNameCaution]};
+
 	[self.imageView bind:NSValueBinding
 				toObject:self
 			 withKeyPath:@"image"
