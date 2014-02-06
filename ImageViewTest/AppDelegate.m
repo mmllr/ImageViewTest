@@ -12,20 +12,23 @@
 
 - (NSArray*)createImages
 {
-	return @[ @{@"name": @"Computer",
-				@"image": [NSImage imageNamed:NSImageNameComputer]
-				},
-			  @{@"name": @"iCloud",
-				@"image": [NSImage imageNamed:NSImageNameDotMac]
-				},
-			 ];
+	return @[
+  @{
+	  @"name": @"Computer",
+	  @"image": [NSImage imageNamed:NSImageNameComputer]
+	  },
+  @{
+	  @"name": @"iCloud",
+	  @"image": [NSImage imageNamed:NSImageNameDotMac]
+	}];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	self.images = [self createImages];
 
-	NSDictionary *options = @{NSNullPlaceholderBindingOption: [NSImage imageNamed:NSImageNameCaution]
+	NSDictionary *options = @{
+							  NSNullPlaceholderBindingOption: [NSImage imageNamed:NSImageNameCaution]
 							  };
 	[self.imageView bind:NSValueBinding
 				toObject:self
